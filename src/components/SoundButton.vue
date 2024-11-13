@@ -3,15 +3,15 @@ import { onKeyStroke } from '@vueuse/core'
 import { useSound } from '@vueuse/sound'
 import { ref, computed } from 'vue'
 
-const volume = ref(0.05)
+const volume = ref(1)
 const props = defineProps({
   sound: String,
   keypress: String,
   index: Number,
   maxkeys: Number,
 })
+
 function getHeight(index: number, max: number) {
-  console.log(max) //undefined
   if (index <= max / 2) {
     return 2.5 * (index + 1)
   } else {
@@ -19,11 +19,12 @@ function getHeight(index: number, max: number) {
   }
 }
 
-const { play } = useSound(props.sound, { volume })
-const isAnimating = ref(false)
-const height = computed(() => `${getHeight(props.index, props.maxkeys)}rem`)
 
-onKeyStroke([props.keypress, props.keypress.toUpperCase()], (e) => {
+const { play } = useSound(new URL(props.sound ?? "", import.meta.url).href, { volume })
+const isAnimating = ref(false)
+const height = computed(() => `${getHeight(props.index ?? 0, props.maxkeys ?? 0)}rem`)
+
+onKeyStroke([props.keypress, (props.keypress ?? "").toUpperCase()], (e) => {
   e.preventDefault()
   play()
 
@@ -36,7 +37,7 @@ onKeyStroke([props.keypress, props.keypress.toUpperCase()], (e) => {
 
 <template>
   <div :class="['box', { animate: isAnimating }]" :style="{ height: height }">
-    <p>{{ props.keypress.toUpperCase() }}</p>
+    <p>{{ (props.keypress ?? "").toUpperCase() }}</p>
   </div>
 </template>
 
