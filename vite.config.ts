@@ -15,5 +15,6 @@ export default defineConfig({
   },
   optimizeDeps: {
     exclude: ['vue-demi'],
+    include: ['howler'],
   },
 })
