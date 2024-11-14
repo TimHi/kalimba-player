@@ -1,0 +1,14 @@
+name: build and lint
+
+on: [pull_request]
+#TODO: Add npm run test:unit
+jobs:
+  unit_test-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          cd frontend/
+          npm ci
+          npm run build
+          npm run lint

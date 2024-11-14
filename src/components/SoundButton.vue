@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { useSound } from '@raffaelesgarro/vue-use-sound'
 import { onKeyStroke } from '@vueuse/core'
-import { useSound } from '@vueuse/sound'
 import { ref, computed } from 'vue'
 
 const volume = ref(1)
@@ -19,12 +19,11 @@ function getHeight(index: number, max: number) {
   }
 }
 
-
-const { play } = useSound(new URL(props.sound ?? "", import.meta.url).href, { volume })
+const { play } = useSound(new URL(props.sound ?? '', import.meta.url).href, { volume })
 const isAnimating = ref(false)
 const height = computed(() => `${getHeight(props.index ?? 0, props.maxkeys ?? 0)}rem`)
 
-onKeyStroke([props.keypress, (props.keypress ?? "").toUpperCase()], (e) => {
+onKeyStroke(props.keypress ?? '', (e) => {
   e.preventDefault()
   play()
 
@@ -37,7 +36,7 @@ onKeyStroke([props.keypress, (props.keypress ?? "").toUpperCase()], (e) => {
 
 <template>
   <div :class="['box', { animate: isAnimating }]" :style="{ height: height }">
-    <p>{{ (props.keypress ?? "").toUpperCase() }}</p>
+    <p>{{ (props.keypress ?? '').toUpperCase() }}</p>
   </div>
 </template>
 
