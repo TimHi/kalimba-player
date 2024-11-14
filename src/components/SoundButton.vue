@@ -45,7 +45,7 @@ onKeyStroke(props.keypress ?? '', (e) => {
   display: flex;
   width: 4rem;
   height: use value from height ref as rem;
-  border: 1px solid white;
+  border: 1px solid rgb(236, 236, 236);
   align-items: center;
   justify-content: center;
 }
@@ -60,7 +60,7 @@ onKeyStroke(props.keypress ?? '', (e) => {
 
 @keyframes example {
   to {
-    background-color: rgb(169, 154, 91);
+    background-color: rgb(212, 176, 29);
   }
 }
 </style>

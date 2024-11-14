@@ -81,6 +81,6 @@ const keyvalues = ref([
         >Pixabay</a
       >
     </p>
-    <p>Version 0.1</p>
+    <p>Version 0.2</p>
   </main>
 </template>
