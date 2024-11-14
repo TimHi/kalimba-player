@@ -66,21 +66,14 @@ const keyvalues = ref([
     <p>Go nuts using your keyboad</p>
     <div style="display: flex; margin: 0 -0.5rem">
       <div v-for="(k, index) in keyvalues" style="margin: 0 0.5rem; height: 100%" :key="k">
-        <SoundButton
-          :sound="soundvalues[index]"
-          :keypress="k"
-          :index="index"
-          :maxkeys="keyvalues.length"
-        />
+        <SoundButton :sound="soundvalues[index]" :keypress="k" :index="index" :maxkeys="keyvalues.length" />
       </div>
     </div>
     <p>
       Sound Effect from
       <a
-        href="https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=95917"
-        >Pixabay</a
-      >
+        href="https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=95917">Pixabay</a>
     </p>
-    <p>Version 0.2</p>
+    <p>Version 0.3</p>
   </main>
 </template>
