@@ -62,7 +62,8 @@ const keyvalues = ref([
 
 <template>
   <main>
-    <h1>Kalimba Geplinka</h1>
+    <h1>Kalimba Player</h1>
+    <p>Go nuts using your keyboad</p>
     <div style="display: flex; margin: 0 -0.5rem">
       <div v-for="(k, index) in keyvalues" style="margin: 0 0.5rem; height: 100%" :key="k">
         <SoundButton
