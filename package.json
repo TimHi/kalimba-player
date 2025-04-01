@@ -28,7 +28,7 @@
     "@types/node": "^22.10.5",
     "@types/webpack-env": "^1.18.8",
     "@vitejs/plugin-vue": "^5.2.1",
-    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "@vitejs/plugin-vue-jsx": "^4.1.2",
     "@vitest/eslint-plugin": "1.1.14",
     "@vue/eslint-config-prettier": "^10.1.0",
     "@vue/eslint-config-typescript": "^14.4.0",
