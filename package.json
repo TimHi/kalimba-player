@@ -42,7 +42,7 @@
     "prettier": "^3.5.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0",
-    "vite-plugin-vue-devtools": "^7.7.1",
+    "vite-plugin-vue-devtools": "^7.7.7",
     "vitest": "^2.1.8",
     "vue-sound": "^0.1.10",
     "vue-tsc": "^2.1.10"
